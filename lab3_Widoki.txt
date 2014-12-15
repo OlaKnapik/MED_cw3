@@ -1,0 +1,33 @@
+Zad2
+
+CREATE VIEW Knapik_WymiarDostawca AS
+(SELECT SupplierID, CompanyName, City, Country
+FROM Suppliers)
+
+Zad3
+
+CREATE VIEW Knapik_WymiarProduktu AS
+(SELECT Products.ProductID, Products.ProductName, Products.CategoryID, Categories.CategoryName
+FROM Products
+JOIN Categories
+ON Products.CategoryID=Categories.CategoryID)
+
+Zad4
+
+CREATE VIEW Knapik_FaktyProdukty AS
+(SELECT ProductID, SupplierID, UnitsInStock
+FROM Products) 
+
+Zad6
+
+DROP VIEW Knapik_WymiarProduktu;
+DROP VIEW Knapik_FaktyProdukty;
+DROP VIEW Knapik_WymiarDostawca;
+
+. . . . . . . . . . . . . .
+
+SELECT * INTO Kn_WymiarProduktu FROM Knapik_FaktyProdukty
+SELECT * INTO Kn_WymiarProduktu FROM Knapik_WymiarDostawca
+SELECT * INTO Kn_WymiarProduktu FROM Knapik_WymiarProduktu
+
+
